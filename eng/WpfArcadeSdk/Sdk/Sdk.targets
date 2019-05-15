@@ -5,7 +5,6 @@
   <Import Project="Sdk.targets" Sdk="Microsoft.DotNet.Arcade.Sdk" />
   <Import Project="$(WpfArcadeSdkToolsDir)RuntimeFrameworkReference.targets"/>
   <Import Project="$(WpfArcadeSdkToolsDir)InlineTasks.targets" />
-  <Import Project="$(WpfArcadeSdkToolsDir)InjectModuleInitializer.targets" Condition="'$(InjectModuleInitializer)'=='true'"/>
   <Import Project="$(WpfArcadeSdkToolsDir)ShippingProjects.targets" />
   <Import Project="$(WpfArcadeSdkToolsDir)GenerateProgramFileForTests.targets" />
   <Import Project="$(WpfArcadeSdkToolsDir)Packaging.targets" />
@@ -20,7 +19,8 @@
   <Import Project="$(WpfArcadeSdkToolsDir)CodeAnalysis.targets" />
   <Import Project="$(WpfArcadeSdkToolsDir)Wpf.Cpp.targets" Condition="'$(MSBuildProjectExtension)'=='.vcxproj'"/>
   <Import Project="$(NoTargetsTargets)" Condition="'$(NoTargets)'=='true'"/>
-  
+  <Import Project="$(WpfArcadeSdkToolsDir)InjectModuleInitializer.targets" Condition="'$(InjectModuleInitializer)'=='true'"/>
+
   <!-- PresentationBuildTasks related targets files -->
   <Import Project="$(WpfArcadeSdkToolsDir)Pbt.targets" Condition="'$(InternalMarkupCompilation)'=='true'"/>
   <Import Project="$(WpfArcadeSdkToolsDir)NoInternalTypeHelper.targets" />
